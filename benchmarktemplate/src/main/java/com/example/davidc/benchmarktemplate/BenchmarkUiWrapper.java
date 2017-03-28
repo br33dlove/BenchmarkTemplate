@@ -34,7 +34,7 @@ class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListen
     @Override
     protected void unregisterResources() {
         super.unregisterResources();
-        if (uiModel.isInLoadingState() && benchmarkService.isBenchmarking(benchmarkServiceCallback)) {
+        if (benchmarkService.isBenchmarking(benchmarkServiceCallback)) {
             benchmarkService.cancelBenchmarking(benchmarkServiceCallback);
         }
     }
