@@ -35,7 +35,7 @@ class BenchmarkUiModel implements UiModel<BenchmarkUi> {
                 break;
             }
             case LOADING: {
-                ui.showStartBenchmarking();
+                ui.showLoadingBenchmarks();
                 break;
             }
         }
