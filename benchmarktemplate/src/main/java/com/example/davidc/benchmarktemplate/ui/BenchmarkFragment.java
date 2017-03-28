@@ -61,13 +61,11 @@ public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, Bench
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.start: {
-                if (hasEventsListener()) {
-                    eventsListener().startBenchmarking(BenchmarkFragment.this);
-                }
-                return true;
+        if (item.getItemId() == R.id.start) {
+            if (hasEventsListener()) {
+                eventsListener().startBenchmarking(BenchmarkFragment.this);
             }
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
