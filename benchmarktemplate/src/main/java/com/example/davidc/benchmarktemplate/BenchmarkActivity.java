@@ -1,57 +1,20 @@
 package com.example.davidc.benchmarktemplate;
 
-import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 
-import com.example.davidc.uiwrapper.UiWrapperRepositoryActivity;
+import com.example.davidc.uiwrapper.SingleContentContainerWithAppBarActivity;
 
-public class BenchmarkActivity extends UiWrapperRepositoryActivity {
+public class BenchmarkActivity extends SingleContentContainerWithAppBarActivity<UiWrapperRepositoryImpl> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_bar_with_content);
-        setupToolbar();
-        addBenchmarkFragment();
-    }
-
-    private void setupToolbar() {
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        final ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowHomeEnabled(false);
-            actionBar.setDisplayHomeAsUpEnabled(false);
-        }
-    }
-
-    private void addBenchmarkFragment() {
-        final FragmentManager fragmentManager = getSupportFragmentManager();
-        if (FragmentManagerHelper.noFragmentBoundToView(fragmentManager, getContentFragmentViewContainer())) {
-            FragmentManagerHelper.addFragment(fragmentManager, BenchmarkFragment.newInstance(), getContentFragmentViewContainer());
-        }
-    }
-
-    @IdRes
-    private int getContentFragmentViewContainer() {
-        return R.id.content;
+    protected void setupActionBar(ActionBar actionBar) {
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        final FragmentManager fragmentManager = getSupportFragmentManager();
-        if (FragmentManagerHelper.hasMoreThanOneNonRetainedFragment(fragmentManager)) {
-            super.onBackPressed();
-            return;
-        }
-        finish();
+    protected Fragment initialFragment() {
+        return BenchmarkFragment.newInstance();
     }
 }
