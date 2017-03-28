@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

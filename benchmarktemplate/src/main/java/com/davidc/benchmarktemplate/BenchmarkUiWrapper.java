@@ -1,8 +1,8 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 
-import com.example.davidc.uiwrapper.UiWrapper;
+import com.davidc.uiwrapper.UiWrapper;
 
 class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> {
     private final static String ARG_SAVED_INSTANCE_STATE_UI_MODEL = "ui model";

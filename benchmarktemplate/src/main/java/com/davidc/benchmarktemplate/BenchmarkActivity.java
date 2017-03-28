@@ -1,9 +1,9 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 
-import com.example.davidc.uiwrapper.SingleContentContainerWithAppBarActivity;
+import com.davidc.uiwrapper.SingleContentContainerWithAppBarActivity;
 
 public class BenchmarkActivity extends SingleContentContainerWithAppBarActivity<UiWrapperRepositoryImpl> {
 

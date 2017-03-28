@@ -1,10 +1,10 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 
-import com.example.davidc.uiwrapper.BaseUiWrapperRepository;
-import com.example.davidc.uiwrapper.UiWrapper;
-import com.example.davidc.uiwrapper.UiWrapperRepository;
+import com.davidc.uiwrapper.BaseUiWrapperRepository;
+import com.davidc.uiwrapper.UiWrapper;
+import com.davidc.uiwrapper.UiWrapperRepository;
 
 import java.util.HashMap;
 import java.util.Map;

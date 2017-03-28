@@ -1,9 +1,9 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.example.davidc.uiwrapper.UiModel;
+import com.davidc.uiwrapper.UiModel;
 
 class BenchmarkUiModel implements UiModel<BenchmarkUi> {
     enum ButtonState {START_BENCHMARKING, LOADING}

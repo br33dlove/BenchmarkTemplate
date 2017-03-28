@@ -1,6 +1,6 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
-import com.example.davidc.uiwrapper.UiWrapperRepositoryFactory;
+import com.davidc.uiwrapper.UiWrapperRepositoryFactory;
 
 public class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepositoryImpl> {
     private final UiWrapperFactory uiWrapperFactory;

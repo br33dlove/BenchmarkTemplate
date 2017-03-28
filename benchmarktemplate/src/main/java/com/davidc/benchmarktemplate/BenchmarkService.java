@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
 public interface BenchmarkService {
     void startBenchmarking(final Callback callback);

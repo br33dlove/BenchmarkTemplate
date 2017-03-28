@@ -1,6 +1,6 @@
-package com.example.davidc.benchmarktemplate;
+package com.davidc.benchmarktemplate;
 
-import com.example.davidc.uiwrapper.Ui;
+import com.davidc.uiwrapper.Ui;
 
 interface BenchmarkUi extends Ui {
     void showStartBenchmarking();
