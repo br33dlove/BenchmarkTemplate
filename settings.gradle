@@ -1,1 +1,1 @@
-include ':app', ':uiwrapper'
+include ':benchmarktemplate', ':uiwrapper'
