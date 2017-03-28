@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Parcel;
 import android.os.Parcelable;

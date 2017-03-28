@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark;
+package com.example.davidc.benchmarktemplate;
 
 public class BenchmarkUiModelFactory {
     private final static BenchmarkUiModel.ButtonState DEFAULT_BUTTON_STATE = BenchmarkUiModel.ButtonState.START_BENCHMARKING;

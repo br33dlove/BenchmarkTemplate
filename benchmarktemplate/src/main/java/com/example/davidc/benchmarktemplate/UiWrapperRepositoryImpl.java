@@ -1,8 +1,7 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 
-import com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark.BenchmarkUi;
 import com.example.davidc.uiwrapper.BaseUiWrapperRepository;
 import com.example.davidc.uiwrapper.UiWrapper;
 import com.example.davidc.uiwrapper.UiWrapperRepository;
@@ -14,11 +13,11 @@ public class UiWrapperRepositoryImpl extends BaseUiWrapperRepository implements 
     private final UiWrapperFactory uiWrapperFactory;
     private final Map<String, UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener>> benchmarkUiWrapperMap = new HashMap<>();
 
-    public UiWrapperRepositoryImpl(UiWrapperFactory uiWrapperFactory) {
+    UiWrapperRepositoryImpl(UiWrapperFactory uiWrapperFactory) {
         this.uiWrapperFactory = uiWrapperFactory;
     }
 
-    public BenchmarkUi.EventsListener bind(final BenchmarkUi ui, final String instanceId, final Bundle savedInstanceState) {
+    BenchmarkUi.EventsListener bind(final BenchmarkUi ui, final String instanceId, final Bundle savedInstanceState) {
         return bind(ui, instanceId, benchmarkUiWrapperMap, new UiWrapperProvider<BenchmarkUi, BenchmarkUi.EventsListener>() {
             @Override
             public UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> uiWrapper() {
@@ -27,7 +26,7 @@ public class UiWrapperRepositoryImpl extends BaseUiWrapperRepository implements 
         });
     }
 
-    public void unbind(final BenchmarkUi ui, final String instanceId, final Bundle outState, final boolean isConfigurationChange) {
+    void unbind(final BenchmarkUi ui, final String instanceId, final Bundle outState, final boolean isConfigurationChange) {
         unbind(instanceId, benchmarkUiWrapperMap, outState, isConfigurationChange);
     }
 }

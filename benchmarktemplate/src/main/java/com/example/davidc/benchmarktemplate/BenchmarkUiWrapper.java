@@ -1,11 +1,10 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 
-import com.example.davidc.benchmarktemplate.model.BenchmarkService;
 import com.example.davidc.uiwrapper.UiWrapper;
 
-public class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> {
+class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> {
     private final static String ARG_SAVED_INSTANCE_STATE_UI_MODEL = "ui model";
     private final BenchmarkUiModel uiModel;
     private final BenchmarkService benchmarkService;
@@ -15,11 +14,11 @@ public class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Event
         this.benchmarkService = benchmarkService;
     }
 
-    public static BenchmarkUiWrapper newInstance(final BenchmarkUiModelFactory modelFactory, final BenchmarkService benchmarkService) {
+    static BenchmarkUiWrapper newInstance(final BenchmarkUiModelFactory modelFactory, final BenchmarkService benchmarkService) {
         return new BenchmarkUiWrapper(modelFactory.create(), benchmarkService);
     }
 
-    public static BenchmarkUiWrapper savedElseNewInstance(final BenchmarkUiModelFactory modelFactory, final BenchmarkService benchmarkService, final Bundle savedInstanceState) {
+    static BenchmarkUiWrapper savedElseNewInstance(final BenchmarkUiModelFactory modelFactory, final BenchmarkService benchmarkService, final Bundle savedInstanceState) {
         final BenchmarkUiModel uiModel = savedInstanceState.getParcelable(ARG_SAVED_INSTANCE_STATE_UI_MODEL);
         return uiModel == null ? newInstance(modelFactory, benchmarkService) : new BenchmarkUiWrapper(uiModel, benchmarkService);
     }

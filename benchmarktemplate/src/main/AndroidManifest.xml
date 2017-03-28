@@ -6,7 +6,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".framework.activities.BenchmarkActivity">
+        <activity android:name=".BenchmarkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

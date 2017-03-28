@@ -1,8 +1,8 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark;
+package com.example.davidc.benchmarktemplate;
 
 import com.example.davidc.uiwrapper.Ui;
 
-public interface BenchmarkUi extends Ui {
+interface BenchmarkUi extends Ui {
     void showStartBenchmarking();
     void showLoadingBenchmarks();
     void showBenchmarkText(final String benchmarkText);

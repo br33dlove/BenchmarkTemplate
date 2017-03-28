@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate.framework.activities;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -6,9 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
-import com.example.davidc.benchmarktemplate.R;
-import com.example.davidc.benchmarktemplate.androidhelpers.FragmentManagerHelper;
-import com.example.davidc.benchmarktemplate.ui.BenchmarkFragment;
 import com.example.davidc.uiwrapper.UiWrapperRepositoryActivity;
 
 public class BenchmarkActivity extends UiWrapperRepositoryActivity {

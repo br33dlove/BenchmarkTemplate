@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate.ui;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.davidc.benchmarktemplate.R;
-import com.example.davidc.benchmarktemplate.framework.uiwrapper.UiWrapperRepositoryImpl;
-import com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark.BenchmarkUi;
 import com.example.davidc.uiwrapper.UiFragment;
 
 public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.EventsListener> implements BenchmarkUi {

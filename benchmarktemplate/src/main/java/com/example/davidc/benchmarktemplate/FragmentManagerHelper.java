@@ -1,19 +1,19 @@
-package com.example.davidc.benchmarktemplate.androidhelpers;
+package com.example.davidc.benchmarktemplate;
 
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-public class FragmentManagerHelper {
+class FragmentManagerHelper {
 
-    public static boolean noFragmentBoundToView(
+    static boolean noFragmentBoundToView(
             final FragmentManager fragmentManager,
             @IdRes final int view
     ) {
         return fragmentManager.findFragmentById(view) == null;
     }
 
-    public static void addFragment(
+    static void addFragment(
             final FragmentManager fragmentManager,
             final Fragment fragment,
             @IdRes final int view
@@ -25,7 +25,7 @@ public class FragmentManagerHelper {
                 .commit();
     }
 
-    public static boolean hasMoreThanOneNonRetainedFragment(final FragmentManager fragmentManager) {
+    static boolean hasMoreThanOneNonRetainedFragment(final FragmentManager fragmentManager) {
         return nonRetainedFragmentCount(fragmentManager) > 1;
     }
 

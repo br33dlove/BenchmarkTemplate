@@ -1,10 +1,6 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper;
+package com.example.davidc.benchmarktemplate;
 
 import android.os.Bundle;
-
-import com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark.BenchmarkUiModelFactory;
-import com.example.davidc.benchmarktemplate.framework.uiwrapper.benchmark.BenchmarkUiWrapper;
-import com.example.davidc.benchmarktemplate.model.BenchmarkService;
 
 public class UiWrapperFactory {
     private final BenchmarkUiModelFactory benchmarkUiModelFactory;
@@ -15,7 +11,7 @@ public class UiWrapperFactory {
         this.benchmarkService = benchmarkService;
     }
 
-    public BenchmarkUiWrapper createBenchmarkUiWrapper(final Bundle savedInstanceState) {
+    BenchmarkUiWrapper createBenchmarkUiWrapper(final Bundle savedInstanceState) {
         return savedInstanceState == null
                 ? BenchmarkUiWrapper.newInstance(benchmarkUiModelFactory, benchmarkService)
                 : BenchmarkUiWrapper.savedElseNewInstance(benchmarkUiModelFactory, benchmarkService, savedInstanceState);

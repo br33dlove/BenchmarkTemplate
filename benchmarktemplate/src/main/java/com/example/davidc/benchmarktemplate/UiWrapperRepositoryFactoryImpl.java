@@ -1,4 +1,4 @@
-package com.example.davidc.benchmarktemplate.framework.uiwrapper;
+package com.example.davidc.benchmarktemplate;
 
 import com.example.davidc.uiwrapper.UiWrapperRepositoryFactory;
 
