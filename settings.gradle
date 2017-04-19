@@ -1,1 +1,1 @@
-include ':benchmarktemplate', ':uiwrapper-debug'
+include ':benchmarktemplate'

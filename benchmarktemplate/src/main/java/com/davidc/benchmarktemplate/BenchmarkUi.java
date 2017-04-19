@@ -7,7 +7,7 @@ interface BenchmarkUi extends Ui {
     void showLoadingBenchmarks();
     void showBenchmarkText(final String benchmarkText);
 
-    interface EventsListener extends Ui.EventsListener {
+    interface Listener extends Ui.Listener {
         void startBenchmarking(final BenchmarkUi ui);
     }
 }

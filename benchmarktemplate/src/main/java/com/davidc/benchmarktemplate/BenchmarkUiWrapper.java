@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.davidc.uiwrapper.UiWrapper;
 
-class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> {
+class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listener> {
     private final static String ARG_SAVED_INSTANCE_STATE_UI_MODEL = "ui model";
     private final BenchmarkUiModel uiModel;
     private final BenchmarkService benchmarkService;
@@ -45,8 +45,8 @@ class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.EventsListen
     }
 
     @Override
-    protected BenchmarkUi.EventsListener eventsListener() {
-        return new BenchmarkUi.EventsListener() {
+    protected BenchmarkUi.Listener eventsListener() {
+        return new BenchmarkUi.Listener() {
             @Override
             public void startBenchmarking(BenchmarkUi ui) {
                 if (!benchmarkService.isBenchmarking(benchmarkServiceCallback)) {

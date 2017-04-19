@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.davidc.uiwrapper.UiFragment;
 
-public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.EventsListener> implements BenchmarkUi {
+public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.Listener> implements BenchmarkUi {
     private boolean showMenuItemStart = false;
     private TextView benchmarkTextView;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -97,7 +97,7 @@ public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, Bench
     }
 
     @Override
-    protected BenchmarkUi.EventsListener bind(UiWrapperRepositoryImpl uiWrapperRepository, String instanceId, Bundle savedInstanceState) {
+    protected BenchmarkUi.Listener bind(UiWrapperRepositoryImpl uiWrapperRepository, String instanceId, Bundle savedInstanceState) {
         return uiWrapperRepository.bind(this, instanceId, savedInstanceState);
     }
 

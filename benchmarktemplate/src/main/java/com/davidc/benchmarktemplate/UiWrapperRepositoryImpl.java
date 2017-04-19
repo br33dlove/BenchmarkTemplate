@@ -4,23 +4,22 @@ import android.os.Bundle;
 
 import com.davidc.uiwrapper.BaseUiWrapperRepository;
 import com.davidc.uiwrapper.UiWrapper;
-import com.davidc.uiwrapper.UiWrapperRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class UiWrapperRepositoryImpl extends BaseUiWrapperRepository implements UiWrapperRepository {
+public class UiWrapperRepositoryImpl extends BaseUiWrapperRepository {
     private final UiWrapperFactory uiWrapperFactory;
-    private final Map<String, UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener>> benchmarkUiWrapperMap = new HashMap<>();
+    private final Map<String, UiWrapper<BenchmarkUi, BenchmarkUi.Listener>> benchmarkUiWrapperMap = new HashMap<>();
 
     UiWrapperRepositoryImpl(UiWrapperFactory uiWrapperFactory) {
         this.uiWrapperFactory = uiWrapperFactory;
     }
 
-    BenchmarkUi.EventsListener bind(final BenchmarkUi ui, final String instanceId, final Bundle savedInstanceState) {
-        return bind(ui, instanceId, benchmarkUiWrapperMap, new UiWrapperProvider<BenchmarkUi, BenchmarkUi.EventsListener>() {
+    BenchmarkUi.Listener bind(final BenchmarkUi ui, final String instanceId, final Bundle savedInstanceState) {
+        return bind(ui, instanceId, benchmarkUiWrapperMap, new UiWrapperProvider<BenchmarkUi, BenchmarkUi.Listener>() {
             @Override
-            public UiWrapper<BenchmarkUi, BenchmarkUi.EventsListener> uiWrapper() {
+            public UiWrapper<BenchmarkUi, BenchmarkUi.Listener> uiWrapper() {
                 return uiWrapperFactory.createBenchmarkUiWrapper(savedInstanceState);
             }
         });
