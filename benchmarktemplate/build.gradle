@@ -1,13 +1,33 @@
 apply plugin: 'com.android.library'
 
+ext {
+    packagingFormat = 'aar'
+    groupPath = 'com.davidcryer.benchmarktemplate'
+    artifactName = 'benchmarktemplate'
+    libraryName = 'BenchmarkTemplate'
+    libraryDescription = 'Library to provide UI infrastructure for quicker implementation of applications in which to run benchmarks'
+    gitWebsiteUrl = 'https://github.com/davidcryer/BenchmarkTemplate'
+    gitUrl = 'https://github.com/davidcryer/BenchmarkTemplate.git'
+    licenseArray = ['Apache-2.0']
+    licenseName = 'Apache License, version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0'
+    developerId = 'davidcryer'
+    developerName = 'David Cryer'
+    developerEmail = 'davecryer.dc@gmail.com'
+    mavenRepoName = 'maven'
+    libraryVersionCode = 1
+    versionTag = '0.1.0'
+    versionDescription = 'Version 0.1.0'
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode libraryVersionCode
+        versionName versionTag
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,3 +47,5 @@ dependencies {
     compile 'com.davidcryer.uiwrapper:uiwrapper:0.2.2'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/davidcryer/BintrayUpload/master/upload.gradle'
