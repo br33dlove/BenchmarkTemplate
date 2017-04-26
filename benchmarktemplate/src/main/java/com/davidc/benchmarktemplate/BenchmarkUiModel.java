@@ -14,6 +14,7 @@ class BenchmarkUiModel implements UiModel<BenchmarkUi> {
     BenchmarkUiModel(final ButtonState buttonState, final String results, final String error) {
         this.buttonState = buttonState;
         this.results = results;
+        this.error = error;
     }
 
     private BenchmarkUiModel(final Parcel parcel) {
@@ -70,8 +71,6 @@ class BenchmarkUiModel implements UiModel<BenchmarkUi> {
             ui.showBenchmarkText(error);
         }
     }
-
-
 
     boolean isInLoadingState() {
         return buttonState == ButtonState.LOADING;
