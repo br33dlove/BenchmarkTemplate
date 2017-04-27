@@ -2,6 +2,7 @@ package com.davidc.benchmarktemplate;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 import com.davidc.uiwrapper.UiModel;
 
@@ -24,7 +25,7 @@ final class BenchmarkUiModel implements UiModel<BenchmarkUi> {
     }
 
     @Override
-    public void onto(BenchmarkUi ui) {
+    public void onto(@NonNull BenchmarkUi ui) {
         if (results != null && !results.isEmpty()) {
             ui.showBenchmarkText(results);
         } else if (error != null && !error.isEmpty()) {

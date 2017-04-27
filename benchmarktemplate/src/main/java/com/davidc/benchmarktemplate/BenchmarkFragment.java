@@ -1,6 +1,7 @@
 package com.davidc.benchmarktemplate;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -97,12 +98,12 @@ public final class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl,
     }
 
     @Override
-    protected BenchmarkUi.Listener bind(UiWrapperRepositoryImpl uiWrapperRepository, String instanceId, Bundle savedInstanceState) {
+    protected BenchmarkUi.Listener bind(@NonNull UiWrapperRepositoryImpl uiWrapperRepository, @NonNull String instanceId, Bundle savedInstanceState) {
         return uiWrapperRepository.bind(this, instanceId, savedInstanceState);
     }
 
     @Override
-    protected void unbind(UiWrapperRepositoryImpl uiWrapperRepository, String instanceId, Bundle outState, boolean isConfigurationChange) {
+    protected void unbind(@NonNull UiWrapperRepositoryImpl uiWrapperRepository, @NonNull String instanceId, Bundle outState, boolean isConfigurationChange) {
         uiWrapperRepository.unbind(this, instanceId, outState, isConfigurationChange);
     }
 }

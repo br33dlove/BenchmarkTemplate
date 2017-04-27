@@ -16,8 +16,8 @@ ext {
     developerEmail = 'davecryer.dc@gmail.com'
     mavenRepoName = 'maven'
     libraryVersionCode = 2
-    versionTag = '0.1.2'
-    versionDescription = 'Version 0.1.2'
+    versionTag = '0.1.3'
+    versionDescription = 'Version 0.1.3'
 }
 
 android {
@@ -44,7 +44,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.davidcryer.uiwrapper:uiwrapper:0.2.4'
+    compile 'com.davidcryer.uiwrapper:uiwrapper:1.0.4'
     testCompile 'junit:junit:4.12'
 }
 

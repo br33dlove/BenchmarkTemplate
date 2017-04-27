@@ -1,7 +1,10 @@
 package com.davidc.benchmarktemplate;
 
+import android.support.annotation.NonNull;
+
 import com.davidc.uiwrapper.UiWrapperRepositoryFactory;
 
+@SuppressWarnings("unused")
 public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepositoryImpl> {
     private final UiWrapperFactory uiWrapperFactory;
 
@@ -10,6 +13,7 @@ public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepository
     }
 
     @Override
+    @NonNull
     public UiWrapperRepositoryImpl create() {
         return new UiWrapperRepositoryImpl(uiWrapperFactory);
     }

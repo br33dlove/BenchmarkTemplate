@@ -4,13 +4,11 @@ import android.os.Bundle;
 
 import com.davidc.uiwrapper.UiWrapper;
 
-final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listener> {
-    private final static String ARG_SAVED_INSTANCE_STATE_UI_MODEL = "ui model";
-    private final BenchmarkUiModel uiModel;
+final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listener, BenchmarkUiModel> {
     private final BenchmarkService benchmarkService;
 
     private BenchmarkUiWrapper(BenchmarkUiModel uiModel, BenchmarkService benchmarkService) {
-        this.uiModel = uiModel;
+        super(uiModel);
         this.benchmarkService = benchmarkService;
     }
 
@@ -19,14 +17,14 @@ final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listen
     }
 
     static BenchmarkUiWrapper savedElseNewInstance(final BenchmarkUiModelFactory modelFactory, final BenchmarkService benchmarkService, final Bundle savedInstanceState) {
-        final BenchmarkUiModel uiModel = savedInstanceState.getParcelable(ARG_SAVED_INSTANCE_STATE_UI_MODEL);
+        final BenchmarkUiModel uiModel = savedUiModel(savedInstanceState);
         return uiModel == null ? newInstance(modelFactory, benchmarkService) : new BenchmarkUiWrapper(uiModel, benchmarkService);
     }
 
     @Override
     protected void registerResources() {
         super.registerResources();
-        if (uiModel.isInLoadingState() && !benchmarkService.isBenchmarking(benchmarkServiceCallback)) {
+        if (uiModel().isInLoadingState() && !benchmarkService.isBenchmarking(benchmarkServiceCallback)) {
             benchmarkService.startBenchmarking(benchmarkServiceCallback);
         }
     }
@@ -40,17 +38,12 @@ final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listen
     }
 
     @Override
-    protected void showCurrentUiState(BenchmarkUi ui) {
-        uiModel.onto(ui);
-    }
-
-    @Override
     protected BenchmarkUi.Listener uiListener() {
         return new BenchmarkUi.Listener() {
             @Override
             public void startBenchmarking(BenchmarkUi ui) {
                 if (!benchmarkService.isBenchmarking(benchmarkServiceCallback)) {
-                    uiModel.showLoadingBenchmarks(ui);
+                    uiModel().showLoadingBenchmarks(ui);
                     benchmarkService.startBenchmarking(benchmarkServiceCallback);
                 }
             }
@@ -60,18 +53,13 @@ final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listen
     private final BenchmarkService.Callback benchmarkServiceCallback = new BenchmarkService.Callback() {
         @Override
         public void onFinish(String results) {
-            uiModel.showBenchmarks(ui(), results);
-            uiModel.showStartBenchmarking(ui());
+            uiModel().showBenchmarks(ui(), results);
+            uiModel().showStartBenchmarking(ui());
         }
 
         @Override
         public void onError(String error) {
-            uiModel.showError(ui(), error);
+            uiModel().showError(ui(), error);
         }
     };
-
-    @Override
-    protected void saveState(Bundle outState) {
-        outState.putParcelable(ARG_SAVED_INSTANCE_STATE_UI_MODEL, uiModel);
-    }
 }

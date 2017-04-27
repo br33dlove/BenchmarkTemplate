@@ -6,7 +6,9 @@ public interface BenchmarkService {
     void cancelBenchmarking(final Callback callback);
 
     interface Callback {
+        @SuppressWarnings("unused")
         void onFinish(final String results);
+        @SuppressWarnings("unused")
         void onError(final String error);
     }
 }
