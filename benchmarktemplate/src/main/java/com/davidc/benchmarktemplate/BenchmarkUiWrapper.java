@@ -45,7 +45,7 @@ final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listen
     }
 
     @Override
-    protected BenchmarkUi.Listener eventsListener() {
+    protected BenchmarkUi.Listener uiListener() {
         return new BenchmarkUi.Listener() {
             @Override
             public void startBenchmarking(BenchmarkUi ui) {
