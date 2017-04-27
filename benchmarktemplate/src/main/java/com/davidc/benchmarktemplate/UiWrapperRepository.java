@@ -23,11 +23,11 @@ import com.davidc.uiwrapper.UiWrapper;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class UiWrapperRepositoryImpl extends BaseUiWrapperRepository {
+public final class UiWrapperRepository extends BaseUiWrapperRepository {
     private final UiWrapperFactory uiWrapperFactory;
     private final Map<String, UiWrapper<BenchmarkUi, BenchmarkUi.Listener, BenchmarkUiModel>> benchmarkUiWrapperMap = new HashMap<>();
 
-    UiWrapperRepositoryImpl(UiWrapperFactory uiWrapperFactory) {
+    UiWrapperRepository(UiWrapperFactory uiWrapperFactory) {
         this.uiWrapperFactory = uiWrapperFactory;
     }
 
