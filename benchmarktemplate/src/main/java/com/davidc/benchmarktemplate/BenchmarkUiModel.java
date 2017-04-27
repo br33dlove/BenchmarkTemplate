@@ -20,7 +20,7 @@ import android.support.annotation.NonNull;
 
 import com.davidc.uiwrapper.UiModel;
 
-final class BenchmarkUiModel implements UiModel<BenchmarkUi> {
+public final class BenchmarkUiModel implements UiModel<BenchmarkUi> {
     enum ButtonState {START_BENCHMARKING, LOADING}
     private ButtonState buttonState;
     private String results;
