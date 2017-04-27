@@ -1,6 +1,6 @@
 package com.davidc.benchmarktemplate;
 
-public class BenchmarkUiModelFactory {
+public final class BenchmarkUiModelFactory {
     private final static BenchmarkUiModel.ButtonState DEFAULT_BUTTON_STATE = BenchmarkUiModel.ButtonState.START_BENCHMARKING;
     private final static String DEFAULT_RESULTS = "";
     private final static String DEFAULT_ERROR = "";

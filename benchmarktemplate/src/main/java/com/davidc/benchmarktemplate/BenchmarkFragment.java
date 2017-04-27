@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.davidc.uiwrapper.UiFragment;
 
-public class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.Listener> implements BenchmarkUi {
+public final class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.Listener> implements BenchmarkUi {
     private boolean showMenuItemStart = false;
     private TextView benchmarkTextView;
     private SwipeRefreshLayout swipeRefreshLayout;

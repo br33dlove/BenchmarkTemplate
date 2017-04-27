@@ -8,7 +8,7 @@ import com.davidc.uiwrapper.UiWrapper;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UiWrapperRepositoryImpl extends BaseUiWrapperRepository {
+public final class UiWrapperRepositoryImpl extends BaseUiWrapperRepository {
     private final UiWrapperFactory uiWrapperFactory;
     private final Map<String, UiWrapper<BenchmarkUi, BenchmarkUi.Listener>> benchmarkUiWrapperMap = new HashMap<>();
 

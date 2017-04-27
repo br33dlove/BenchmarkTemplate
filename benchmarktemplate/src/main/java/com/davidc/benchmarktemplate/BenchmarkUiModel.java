@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.davidc.uiwrapper.UiModel;
 
-class BenchmarkUiModel implements UiModel<BenchmarkUi> {
+final class BenchmarkUiModel implements UiModel<BenchmarkUi> {
     enum ButtonState {START_BENCHMARKING, LOADING}
     private ButtonState buttonState;
     private String results;

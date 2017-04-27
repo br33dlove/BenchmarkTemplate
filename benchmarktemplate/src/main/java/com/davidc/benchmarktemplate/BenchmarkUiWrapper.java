@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.davidc.uiwrapper.UiWrapper;
 
-class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listener> {
+final class BenchmarkUiWrapper extends UiWrapper<BenchmarkUi, BenchmarkUi.Listener> {
     private final static String ARG_SAVED_INSTANCE_STATE_UI_MODEL = "ui model";
     private final BenchmarkUiModel uiModel;
     private final BenchmarkService benchmarkService;

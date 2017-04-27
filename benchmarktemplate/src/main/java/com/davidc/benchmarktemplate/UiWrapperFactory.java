@@ -2,7 +2,7 @@ package com.davidc.benchmarktemplate;
 
 import android.os.Bundle;
 
-public class UiWrapperFactory {
+public final class UiWrapperFactory {
     private final BenchmarkUiModelFactory benchmarkUiModelFactory;
     private final BenchmarkService benchmarkService;
 

@@ -5,7 +5,7 @@ import android.support.v7.app.ActionBar;
 
 import com.davidc.uiwrapper.SingleContentContainerWithAppBarActivity;
 
-public class BenchmarkActivity extends SingleContentContainerWithAppBarActivity<UiWrapperRepositoryImpl> {
+public final class BenchmarkActivity extends SingleContentContainerWithAppBarActivity<UiWrapperRepositoryImpl> {
 
     @Override
     protected void setupActionBar(ActionBar actionBar) {

@@ -2,7 +2,7 @@ package com.davidc.benchmarktemplate;
 
 import com.davidc.uiwrapper.UiWrapperRepositoryFactory;
 
-public class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepositoryImpl> {
+public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepositoryImpl> {
     private final UiWrapperFactory uiWrapperFactory;
 
     public UiWrapperRepositoryFactoryImpl(UiWrapperFactory uiWrapperFactory) {
