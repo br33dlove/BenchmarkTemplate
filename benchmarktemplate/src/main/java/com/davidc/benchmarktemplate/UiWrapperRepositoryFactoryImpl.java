@@ -19,7 +19,7 @@ import android.support.annotation.NonNull;
 import com.davidc.uiwrapper.UiWrapperRepositoryFactory;
 
 @SuppressWarnings("unused")
-public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepositoryImpl> {
+public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepositoryFactory<UiWrapperRepository> {
     private final UiWrapperFactory uiWrapperFactory;
 
     public UiWrapperRepositoryFactoryImpl(UiWrapperFactory uiWrapperFactory) {
@@ -28,7 +28,7 @@ public final class UiWrapperRepositoryFactoryImpl implements UiWrapperRepository
 
     @Override
     @NonNull
-    public UiWrapperRepositoryImpl create() {
-        return new UiWrapperRepositoryImpl(uiWrapperFactory);
+    public UiWrapperRepository create() {
+        return new UiWrapperRepository(uiWrapperFactory);
     }
 }

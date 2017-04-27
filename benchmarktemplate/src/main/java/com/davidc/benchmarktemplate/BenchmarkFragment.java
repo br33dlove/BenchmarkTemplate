@@ -28,7 +28,7 @@ import android.widget.TextView;
 
 import com.davidc.uiwrapper.UiFragment;
 
-public final class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl, BenchmarkUi.Listener> implements BenchmarkUi {
+public final class BenchmarkFragment extends UiFragment<UiWrapperRepository, BenchmarkUi.Listener> implements BenchmarkUi {
     private boolean showMenuItemStart = false;
     private TextView benchmarkTextView;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -112,12 +112,12 @@ public final class BenchmarkFragment extends UiFragment<UiWrapperRepositoryImpl,
     }
 
     @Override
-    protected BenchmarkUi.Listener bind(@NonNull UiWrapperRepositoryImpl uiWrapperRepository, @NonNull String instanceId, Bundle savedInstanceState) {
+    protected BenchmarkUi.Listener bind(@NonNull UiWrapperRepository uiWrapperRepository, @NonNull String instanceId, Bundle savedInstanceState) {
         return uiWrapperRepository.bind(this, instanceId, savedInstanceState);
     }
 
     @Override
-    protected void unbind(@NonNull UiWrapperRepositoryImpl uiWrapperRepository, @NonNull String instanceId, Bundle outState, boolean isConfigurationChange) {
+    protected void unbind(@NonNull UiWrapperRepository uiWrapperRepository, @NonNull String instanceId, Bundle outState, boolean isConfigurationChange) {
         uiWrapperRepository.unbind(this, instanceId, outState, isConfigurationChange);
     }
 }
